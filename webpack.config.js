@@ -14,11 +14,17 @@ module.exports = {
     chunkFilename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
   },
+  devServer: {
+    contentBase: './dist',
+  },
   optimization: {
     minimize: false,
     minimizer: [
-      new TerserJSPlugin({}),
-      new OptimizeCSSAssetsPlugin({})],
+      new TerserJSPlugin({
+        test: /\.js(\?.*)?$/i,
+      }),
+      new OptimizeCSSAssetsPlugin({})
+    ],
   },
   plugins: [
     new HTMLWebpackPlugin({
@@ -44,6 +50,16 @@ module.exports = {
           'css-loader',
         ],
       },
+      {
+        test: /\.s[ac]ss$/i,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
+          'css-loader',
+          'sass-loader',
+        ],
+      }
     ],
   },
 };
