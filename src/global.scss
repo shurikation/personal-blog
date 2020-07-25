@@ -3,14 +3,31 @@
   margin: 0 auto;
 }
 
-.collapse {
+.collapsed {
   display: none !important;
 }
 
-.logo {
-
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
 }
 
-.nav {
-
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
 }
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
