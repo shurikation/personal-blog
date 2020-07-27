@@ -16,6 +16,7 @@ module.exports = {
   },
   devServer: {
     contentBase: './dist',
+    stats: 'errors-only'
   },
   optimization: {
     minimize: false,
@@ -59,7 +60,19 @@ module.exports = {
           'css-loader',
           'sass-loader',
         ],
-      }
+      },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[path][name].[ext]',
+              // context: './src'
+            }
+          },
+        ],
+      },
     ],
   },
 };
