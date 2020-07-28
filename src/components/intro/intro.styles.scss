@@ -1,3 +1,41 @@
 .intro {
+  height: 100vh;
+  position: relative;
   background-image: url("components/intro/wallpaper.jpg");
+  background-position: 25%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.intro:before {
+  
+}
+
+.main__intro {
+
+}
+
+.intro__bg,
+.intro__bg-wrap {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
+
+.intro__title,
+.intro__subtitle {
+  color: #fff;
+}
+
+
+
+.intro__bg-overlay {
+  position: absolute;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.60);
 }

@@ -14,11 +14,9 @@ module.exports = {
     ]
   },
   output: {
-    // filename: '[name].bundle.js',
-    // chunkFilename: '[name].bundle.js',
-    // path: path.resolve(__dirname, 'dist'),
-    path: path.resolve(__dirname, 'dist'),
-    filename: '[name].js'
+    filename: '[name].js',
+    chunkFilename: '[name].chunk.js',
+    path: path.resolve(__dirname, 'dist')
   },
   devServer: {
     contentBase: './dist',
@@ -39,8 +37,7 @@ module.exports = {
     }),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
-      filename: '[name].css',
-      output: path.resolve(__dirname, 'src')
+      filename: '[name].css'
     }),
     new CopyWebpackPlugin({
       patterns: [
