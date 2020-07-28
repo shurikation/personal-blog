@@ -9,6 +9,10 @@
   display: none !important;
 }
 
+.title {
+  text-align: center;
+}
+
 .button {
   background-color: $green;
   color: #fff;
@@ -24,7 +28,7 @@
   position: absolute;
   width: 102%;
   height: 6%;
-  background-image: url(https://wanderland.qodeinteractive.com/wp-content/uploads/2019/11/h1-rev-bottom-768x58.png);
+  background-image: url(components/bg-brushstrokes-768x58.png);
   background-repeat: repeat-x;
 }
 

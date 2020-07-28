@@ -1,0 +1,34 @@
+.projects {
+  background-color: rgba(0, 0, 0, 0.8);
+  position: relative;
+}
+
+.main__projects{
+  padding-top: 50px;
+  margin-top: 30px;
+}
+
+.projects__bg-brushstrokes {
+  position: absolute;
+  transform: rotate(180deg);
+  top: 0;
+  left: -4px;
+}
+
+.projects__title {
+  color: #fff;
+}
+
+.projects__example {
+  width: 70%;
+  margin: 10px auto 0;
+}
+
+@media(min-width: 400px) {
+  .projects__bg-brushstrokes {
+    top: -2%;
+  }
+}
+
+
+
