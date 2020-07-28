@@ -1,27 +1,50 @@
 .intro {
-  height: 100vh;
+  //height: 100vh;
   position: relative;
-  background-image: url("components/intro/wallpaper.jpg");
-  background-position: 25%;
-  background-repeat: no-repeat;
-  background-size: cover;
+  //background-image: url("components/intro/wallpaper.jpg");
+  //background-position: 25%;
+  //background-repeat: no-repeat;
+  //background-size: cover;
 }
 
-.intro:before {
-  
+.intro::before {
+  content: '';
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.60);
 }
 
 .main__intro {
 
 }
 
+.intro__bg-wrap {
+
+}
+
+.intro__bg-image {
+  height: 100vh;
+  width: 100vw;
+  object-fit: cover;
+  object-position: 25%;
+}
+
+
 .intro__bg,
 .intro__bg-wrap {
+  //position: absolute;
+  //clip: rect(0 0 0 0);
+  //width: 1px;
+  //height: 1px;
+  //margin: -1px;
+}
+
+.intro__description {
   position: absolute;
-  clip: rect(0 0 0 0);
-  width: 1px;
-  height: 1px;
-  margin: -1px;
+  top: 45%;
+  left: 10%;
+  max-width: 80%;
 }
 
 .intro__title,
@@ -29,13 +52,18 @@
   color: #fff;
 }
 
+.intro__title,
+.intro__subtitle {
+  margin-bottom: 10px;
+}
+
 
 
 .intro__bg-overlay {
-  position: absolute;
-  height: 100vh;
-  top: 0;
-  right: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.60);
+  //position: absolute;
+  //height: 100vh;
+  //top: 0;
+  //right: 0;
+  //left: 0;
+  //background-color: rgba(0, 0, 0, 0.60);
 }

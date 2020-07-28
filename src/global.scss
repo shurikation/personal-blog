@@ -1,3 +1,5 @@
+@import "vars";
+
 .container {
   padding: 0 1rem;
   margin: 0 auto;
@@ -5,6 +7,20 @@
 
 .collapsed {
   display: none !important;
+}
+
+.button {
+  background-color: $green;
+  color: #fff;
+  padding: 0.5rem;
+  //border-radius: 7px;
+  //border-radius: 10px;
+  border: 2px solid $green;
+  //clip-path: polygon(100% 0, 94% 100%, 0 100%, 0 0);
+  &:hover {
+    cursor: pointer;
+    background-color: transparent;
+  }
 }
 
 @media (min-width: 576px) {
