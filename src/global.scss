@@ -13,14 +13,19 @@
   background-color: $green;
   color: #fff;
   padding: 0.5rem;
-  //border-radius: 7px;
-  //border-radius: 10px;
   border: 2px solid $green;
-  //clip-path: polygon(100% 0, 94% 100%, 0 100%, 0 0);
   &:hover {
     cursor: pointer;
     background-color: transparent;
   }
+}
+
+.bg-brushstrokes {
+  position: absolute;
+  width: 102%;
+  height: 6%;
+  background-image: url(https://wanderland.qodeinteractive.com/wp-content/uploads/2019/11/h1-rev-bottom-768x58.png);
+  background-repeat: repeat-x;
 }
 
 @media (min-width: 576px) {
