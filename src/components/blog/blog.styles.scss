@@ -1,0 +1,26 @@
+.blog__post {
+  margin-top: 20px;
+}
+
+
+@media (min-width: 992px) {
+  .post {
+    display: flex;
+  }
+
+
+  .post__image {
+    width: 30%; //Test КОСТЫЛЬ!!!!!
+  }
+
+  .post-info {
+    display: flex;
+    //justify-content: space-around;
+  }
+
+  .post__description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
