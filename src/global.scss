@@ -11,25 +11,42 @@
 
 .title {
   text-align: center;
+  color: $black;
+}
+
+.subtitle {
+  color: $grey;
 }
 
 .button {
   background-color: $green;
   color: #fff;
-  padding: 0.5rem;
+  padding: .5rem .5rem .7rem;
   border: 2px solid $green;
+  outline: none;
   &:hover {
     cursor: pointer;
     background-color: transparent;
+    color: $green;
   }
 }
 
-.bg-brushstrokes {
-  position: absolute;
-  width: 102%;
-  height: 6%;
-  background-image: url(components/bg-brushstrokes-768x58.png);
-  background-repeat: repeat-x;
+.brushstrokes {
+  //position: absolute;
+  ////height: auto;
+  ////max-width: 100%;
+  //width: 102%;
+  //height: 8%;
+  //background-image: url(components/bg-brushstrokes-768x58.png);
+  //background-repeat: repeat-x;
+}
+
+.brushstrokes {
+  //height: auto;
+  //width: 100%;
+  width: 100%;
+  /* position: absolute; */
+
 }
 
 @media (min-width: 576px) {

@@ -2,9 +2,8 @@
 
 }
 
-.about__bg-brushstrokes {
-  top: -60px;
-  left: -4px;
+.about__brushstrokes {
+  margin-top: -11%;
 }
 
 .main__about {
@@ -16,8 +15,9 @@
 }
 
 .about__image {
-  margin-top: 15px;
+  margin: 15px auto 30px;
 }
+
 
 .personal__title {
   text-align: center;
@@ -37,6 +37,30 @@
 
 .rotate180 {
   transform: rotate(180deg);
+}
+
+@media(min-width: 567px) {
+  .about__content {
+    padding: 0 1rem;
+  }
+
+  .about__brushstrokes {
+    margin-top: -8%;
+  }
+}
+
+@media(min-width: 992px) {
+  .about__content {
+    display: flex;
+  }
+
+  .about__image {
+    max-width: 40%;
+  }
+
+  .about__info {
+    margin-left: 20px;
+  }
 }
 
 

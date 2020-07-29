@@ -8,12 +8,12 @@
     <title>Shurikation</title>
 </head>
 <body>
+<!--HEADER-->
 <header class="header">
     <div class="container">
         <div class="header__wrap">
             <div class="logo header__logo">
                 &lt;AP/&gt;_
-                <!--                <a href="#"><img class="logo__img" src="logo.png" alt="логотип"></a>-->
             </div>
             <nav class="navbar">
                 <ul class="navbar__list">
@@ -28,19 +28,21 @@
     </div>
 </header>
 <main class="main">
+    <!--    INTRO-->
     <section class="intro main__intro">
         <picture class="intro__bg-wrap">
             <img class="intro__bg-image" src="components/intro/wallpaper.jpg"
                  alt="веб разработчик"/>
         </picture>
         <div class="intro__description">
-            <h1 class="intro__title title">Александр Попов</h1>
+            <h1 class="intro__title">Александр Попов</h1>
             <p class="intro__subtitle">Фронтенд-разработчик</p>
-            <button class="button intro__button">Мои проекты</button>
+            <a class="button intro__button" href="#">Мои проекты</a>
         </div>
     </section>
+    <!--    ABOUT-->
     <section class="about main__about">
-        <div class="bg-brushstrokes about__bg-brushstrokes"></div>
+        <img class="brushstrokes about__brushstrokes" src="components/bg-brushstrokes-1900w.png">
         <div class="container">
             <h2 class="about__title title">Обо мне</h2>
             <div class="about__content">
@@ -49,43 +51,85 @@
                     <div class="about__personal personal">
                         <!--                        <h3 class="personal__title">Добро пожаловать</h3>-->
 
-                        <p class="personal__subtitle">Меня зовут Александр.
+                        <p class="personal__subtitle subtitle">Меня зовут Александр.
                             Я занимаюсь разработкой фронтенд-приложений.
                             Постоянно изучаю новое и совершенствуюсь в JavaScript и ReactJS.
-                            Вдохновляет качественная верстка, оптимальные решения, понятный, чистый, красивый код.
+                            Вдохновляет качественная верстка, оптимальные решения, понятный и чистый код.
+                            Мои работы находятся в разделе "Проекты"
                             <!--                        Ознакомиться с моими работами можно в разделе "Проекты".-->
                             <!--                        Исходный код на моем репозтории GitHub.-->
                             <!--                        Более подробная информация в моем резюме.</p>--></p>
 
-                        <p class="personal__subtitle">Люблю английский язык примерно на уровне Intermediate (B1).
+                        <p class="personal__subtitle subtitle">Люблю английский язык примерно на уровне Intermediate
+                            (B1).
                             Периодически делаю переводы свежих англоязычных статей на тему фронтенда, ИТ.
                             Ознакомиться с публикациями можно в резделе "Блог".
                             Статьи также дублируются на @medium.</p>
 
-                        <p class="personal__subtitle">Кроме того, вдохновляюсь чтением книг, практикую бег по утрам и
+                        <p class="personal__subtitle subtitle">Кроме того, вдохновляюсь чтением книг, практикую бег по
+                            утрам и
                             фитнес.</p>
+
+                        <p class="personal__subtitle subtitle"> Телефон: +7 927 0559 158
+                            <br>
+                            E-mail: shurikation@gmail.com
+                            <br>
+                            Telegram: @shurikation</p>
                     </div>
-                    <button class="button about__button">Моё резюме</button>
+                    <a class="button about__button" href="#">Открыть резюме</a>
                 </div>
             </div>
         </div>
     </section>
-    <section class="projects main__projects">
-        <div class="bg-brushstrokes projects__bg-brushstrokes"></div>
+    <!--    WORKS-->
+    <section class="works main__works">
+        <img class="brushstrokes works__brushstrokes" src="components/grey-bottom.png">
         <div class="container">
-        <h2 class="projects__title title">Проекты</h2>
-        <div class="projects__content">
-            <div class="projects__example">
-                <img src="components/projects/react.png" alt="проект реакт">
-            </div>
-            <div class="projects__example">
-                <img src="components/projects/react.png" alt="проект реакт">
-            </div>
-            <div class="projects__example">
-                <img src="components/projects/react.png" alt="проект реакт">
+            <h2 class="works__title title">Проекты</h2>
+            <div class="works__content">
+<!--                PROJECTs-->
+                <div class="works__project project">
+                    <h4 class="project__title title">Landing-page &laquo;Suppke&raquo;</h4>
+                    <div class="project__content">
+                        <img class="project__image" src="components/works/suppke_2.jpg" alt="проект реакт">
+                        <div class="project__overlay">
+                            <nav class="project__nav">
+                                <a class="project__links fromTopToBottom" href="#">Описание проекта</a>
+                                <a class="project__links" href="#">Код на GitHub</a>
+                                <a class="project__links fromBottomToTop" href="#">Перейти на сайт проекта</a>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="works__project project">
+                    <h4 class="project__title title">Landing-page &laquo;Suppke&raquo;</h4>
+                    <div class="project__content">
+                        <img class="project__image" src="components/works/suppke_2.jpg" alt="проект реакт">
+                        <div class="project__overlay">
+                            <nav class="project__nav">
+                                <a class="project__links fromTopToBottom" href="#">Описание проекта</a>
+                                <a class="project__links" href="#">Код на GitHub</a>
+                                <a class="project__links fromBottomToTop" href="#">Перейти на сайт проекта</a>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="works__project project">
+                    <h4 class="project__title title">Landing-page &laquo;Suppke&raquo;</h4>
+                    <div class="project__content">
+                        <img class="project__image" src="components/works/suppke_2.jpg" alt="проект реакт">
+                        <div class="project__overlay">
+                            <nav class="project__nav">
+                                <a class="project__links fromTopToBottom" href="#">Описание проекта</a>
+                                <a class="project__links" href="#">Код на GitHub</a>
+                                <a class="project__links fromBottomToTop" href="#">Перейти на сайт проекта</a>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        </div>
+<!--        <img class="brushstrokes about__brushstrokes" src="components/bg-brushstrokes-1900w.png">-->
     </section>
 </main>
 </body>
