@@ -1,20 +1,45 @@
 .footer {
   flex-shrink: 0; //4.Footer to bottom
+  //background-color: $grey;
   background-color: $grey;
-  padding: 25px 0;
+  padding-bottom: 15px;
+}
+
+.footer__brushstrokes {
+  transform: rotate(180deg);
+  margin-top: -2px;
+}
+
+.footer__wrapper {
+  padding-top: 30px;
 }
 
 .footer__copyright {
   margin-top: 15px;
   text-align: center;
+  color: $white;
 }
-
 
 @media (min-width: 768px) {
   .footer__wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+
+  .footer__copyright {
+    font-size: 18px;
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .footer__wrapper {
+    padding-top: 20px;
+  }
+
+  .footer__copyright {
+    font-size: 20px;
   }
 }
 

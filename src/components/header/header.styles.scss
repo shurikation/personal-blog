@@ -1,17 +1,11 @@
 .header {
-  padding: .5rem 0;
-  border-bottom: 1px solid #000;
-  background-color: transparent;
-
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
+  padding: .5rem 0;
+  background-color: transparent;
   z-index: 1;
-  //transition: all .5s ease-in-out;
-  //background-color: transparent;
-  //padding-top: 1.563rem;
-  //padding-bottom: 1.563rem;
 }
 
 .header__wrap {
@@ -20,13 +14,16 @@
   align-items: center;
 }
 
-.logo {
-
-}
-
+//Оставить текст или сделать логотипом?
 .header__logo {
   padding: .5rem 0;
   color: #fff;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.header__navbar {
+  margin-right: 2rem;
 }
 
 .navbar {
@@ -35,7 +32,7 @@
 
 .header__toggler {
   position: relative;
-  width: 25px;
+  width: 35px;
   height: 3px;
   background-color: #fff;
   transition: background-color 1s;
@@ -47,33 +44,32 @@
     width: inherit;
     height: inherit;
     background-color: #fff;
-    transition: transform 0.2s ease-in, top 0.2s linear 0.2s
+    transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
+    left: 0;
   }
   &::before {
-    top: 7px;
-    left: 0;
+    top: 9px;
   }
   &::after {
-    top: -7px;
-    left: 0;
+    top: -9px;
   }
 }
 
 .toggler--active {
   background-color: transparent;
   transition: background-color 0.1s;
+  &::before,
+  &::after {
+    top: 0;
+    transition: top 0.2s linear, transform 0.2s ease-in 0.2s;
+  }
   &::before {
     transform: rotate(45deg);
-    top: 0;
-    transition: top 0.2s linear, transform 0.2s ease-in 0.2s;
   }
   &::after {
-    transform: rotate(-45deg);
-    top: 0;
-    transition: top 0.2s linear, transform 0.2s ease-in 0.2s;
+    transform: rotate(-45deg); //Если анимация не будет работать, возможно стоит продублировать одинаковые стили
   }
 }
-
 
 @media (min-width: 768px) {
   .navbar {
@@ -85,11 +81,38 @@
   }
 
   .navbar__item {
-    padding: .5rem 1rem;
+    position: relative;
+    margin-left: 2.5rem;
+    padding: 0.5rem 0;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      border-bottom: 2px solid $green-links;
+      transition: 0.2s;
+      transform: scaleX(0);
+    }
+  }
+
+  .navbar__item:hover::before {
+    cursor: pointer;
+    transition: var(--hover-transition);
+    transform: scale(1);
+  }
+
+  .navbar__item:hover .navbar__link {
+    color: $green-links;
+    transition: var(--hover-transition);
   }
 
   .navbar__link {
     color: #fff;
+    text-transform: uppercase;
+    font-size: 16px;
+    transition: var(--hover-transition);
   }
 
   .header__toggler {
@@ -97,6 +120,13 @@
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
+  .navbar__link {
+    font-size: 18px;
+  }
 
+  .navbar__item {
+    margin-left: 4rem;
+    padding: 0.8rem 0 0.5rem 0;
+  }
 }

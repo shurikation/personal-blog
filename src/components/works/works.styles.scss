@@ -30,32 +30,26 @@
 
 .project__overlay {
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  top: 0;right: 0;bottom: 0;left: 0;
   background-color: transparent;
-  &:before {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 50%;
-    background: $grey;
-    opacity: .8;
-    top: 0;
-    left: 0;
-    transition: all var(--hover-transition);
-  }
+  &:before,
   &:after {
     content: '';
     position: absolute;
     width: 0;
     height: 50%;
-    background: $grey;
+    background-color: $grey;
     opacity: .8;
+    transition: var(--hover-transition);
+  }
+  &:before {
+    top: 0;
+    left: 0;
+  }
+  &:after {
     bottom: 0;
     right: 0;
-    transition: all var(--hover-transition);
+    transition: var(--hover-transition);
   }
 }
 
@@ -65,12 +59,8 @@
   transition: all var(--hover-transition);
 }
 
-.project__content:hover .project__nav {
-  opacity: 1;
-  transition: all var(--hover-transition);
-}
-
 .project__nav {
+  visibility: hidden;
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -81,7 +71,37 @@
   text-align: center;
   z-index: 2;
   transition: .5s;
-  opacity: 0;
+}
+
+.project__content:hover .project__nav {
+  visibility: visible;
+  transition: all var(--hover-transition);
+}
+
+.project__link {
+  position: relative;
+  color: $white;
+  font-weight: 700;
+  margin: 20px 0;
+  padding: 20px 0;
+  visibility: hidden;
+  opacity: 1;
+  &:hover {
+    color: $green-links;
+  }
+}
+
+.github-link {
+  &:before {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: url(./components/works/github.svg);
+    background-repeat: no-repeat;
+    left: 17%;
+    top: 37%;
+  }
 }
 
 .fromTopToBottom {
@@ -98,16 +118,6 @@
   z-index: 7;
   -webkit-transition: all .6s;
   transition: all .6s;
-}
-
-.github-link {
-  display: flex;
-}
-
-.project__link {
-  padding: 25px 0;
-  visibility: hidden;
-  opacity: 0;
 }
 
 .project__overlay:hover .fromBottomToTop,
@@ -168,6 +178,10 @@
 }
 
 @media (min-width: 992px) {
+  .works__title {
+    padding-top: 0;
+  }
+
   .works__content {
     display: flex;
     flex-wrap: wrap;
