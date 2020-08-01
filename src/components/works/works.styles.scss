@@ -3,19 +3,12 @@
   position: relative;
 }
 
-.main__works{
+.main__works {
   margin-top: 30px;
 }
 
-//.projects__bg-brushstrokes {
-//  position: absolute;
-//  transform: rotate(180deg);
-//  top: -1px;
-//  left: -4px;
-//}
-
 .works__title {
-
+  padding-top: 20px;
 }
 
 .works__project {
@@ -51,7 +44,7 @@
     opacity: .8;
     top: 0;
     left: 0;
-    transition: all .5s;
+    transition: all var(--hover-transition);
   }
   &:after {
     content: '';
@@ -62,19 +55,19 @@
     opacity: .8;
     bottom: 0;
     right: 0;
-    transition: all .5s;
+    transition: all var(--hover-transition);
   }
 }
 
 .project__content:hover .project__overlay:before,
 .project__content:hover .project__overlay:after {
   width: 100%;
-  transition: all .5s;
+  transition: all var(--hover-transition);
 }
 
 .project__content:hover .project__nav {
   opacity: 1;
-  transition: all .5s;
+  transition: all var(--hover-transition);
 }
 
 .project__nav {
@@ -107,7 +100,11 @@
   transition: all .6s;
 }
 
-.project__links {
+.github-link {
+  display: flex;
+}
+
+.project__link {
   padding: 25px 0;
   visibility: hidden;
   opacity: 0;
@@ -115,11 +112,39 @@
 
 .project__overlay:hover .fromBottomToTop,
 .project__overlay:hover .fromTopToBottom,
-.project__overlay:hover .project__links {
+.project__overlay:hover .project__link {
   transform: translateY(0);
   opacity: 1;
   transition: all .6s;
   visibility: visible;
+}
+
+.work-description {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 3;
+}
+
+.work-description__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  min-height: 300px;
+  max-height: 500px;
+  background-color: #fff;
+  transform: translateX(-50%) translateY(-50%);
+  padding: 5px;
+  overflow: auto;
+}
+
+.work-description__close {
+  position: absolute;
+  right: 2%;
+  display: inline-block;
 }
 
 @media(min-width: 400px) {
@@ -128,21 +153,43 @@
   }
 }
 
+@media (min-width: 576px) {
+  .work-description__content {
+    width: 60%;
+  }
+}
+
+
 @media (min-width: 768px) {
-  //.project {
-  //  max-width: 90%;
-  //}
+  .work-description__content {
+    width: 50%;
+    padding: 10px;
+  }
 }
 
 @media (min-width: 992px) {
   .works__content {
     display: flex;
+    flex-wrap: wrap;
   }
 
   .works__project {
     padding: 0 .5rem;
   }
+
+  .work-description__content {
+    width: 40%;
+  }
 }
 
+@media (min-width: 1200px) {
+  .work-description__content {
+    width: 25%;
+  }
+}
 
+#git-object {
+  width: 40px;
+  height: 40px;
+}
 
