@@ -1,7 +1,11 @@
 @import "vars";
 
+:root {
+  --hover-transition: 0.5s;
+}
+
 .container {
-  padding: 0 1rem;
+  padding: 0 15px;
   margin: 0 auto;
 }
 
@@ -9,68 +13,102 @@
   display: none !important;
 }
 
-.title {
-  text-align: center;
-  color: $black;
+.main-title {
+
 }
 
-.subtitle {
+.main-title,
+.minor-title {
+  color: $black;
+  text-align: center;
+}
+
+.minor-title {
+  font-size: 18px;
+}
+
+.text {
   color: $grey;
+  text-align: justify;
+  line-height: 1.3em;
 }
 
 .button {
   display: inline-block;
   background-color: $green;
-  color: #fff;
+  color: $white;
   padding: .5rem .5rem .7rem;
   border: 2px solid $green;
   outline: none;
+  transition: all var(--hover-transition);
   &:hover {
     cursor: pointer;
     background-color: transparent;
     color: $green;
+    transition: all var(--hover-transition);
   }
 }
 
 .brushstrokes {
-  //position: absolute;
-  ////height: auto;
-  ////max-width: 100%;
-  //width: 102%;
-  //height: 8%;
-  //background-image: url(components/bg-brushstrokes-768x58.png);
-  //background-repeat: repeat-x;
-}
-
-.brushstrokes {
-  //height: auto;
-  //width: 100%;
   width: 100%;
-  /* position: absolute; */
-
 }
 
 @media (min-width: 576px) {
   .container {
     max-width: 540px;
   }
+
+  .main-title {
+    font-size: 26px;
+  }
+
+  .minor-title {
+    font-size: 19px;
+  }
 }
 
 @media (min-width: 768px) {
   .container {
     max-width: 720px;
+    padding: 0 2rem;
   }
 }
 
 @media (min-width: 992px) {
   .container {
     max-width: 960px;
+    padding: 0 2.5rem;
+  }
+
+  .main-title {
+    font-size: 28px;
+  }
+
+  .minor-title {
+    font-size: 20px;
+  }
+
+  .text {
+    font-size: 17px;
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
   .container {
-    max-width: 960px;
+    max-width: 1140px;
+  }
+
+  .main-title {
+    font-size: 30px;
+  }
+
+  .text {
+    font-size: 18px;
   }
 }
 
+@media (min-width: 1600px) {
+  .container {
+    max-width: 1440px;
+  }
+}
