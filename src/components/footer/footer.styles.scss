@@ -1,3 +1,24 @@
-//.footer {
-//  flex-shrink: 0; //4.Footer to bottom
-//}
+.footer {
+  flex-shrink: 0; //4.Footer to bottom
+  background-color: $grey;
+  padding: 25px 0;
+}
+
+.footer__copyright {
+  margin-top: 15px;
+  text-align: center;
+}
+
+
+@media (min-width: 768px) {
+  .footer__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+
+
+
+
