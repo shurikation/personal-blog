@@ -4,8 +4,8 @@
 }
 
 .icon {
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   &__circle {
     fill: $icon-circle;
   }
@@ -83,6 +83,17 @@
 @media (min-width: 768px) {
   .icon {
     padding: 0 15px;
+    width: 40px;
+    height: 40px;
   }
 }
+
+@media (min-width: 1200px) {
+  .icon {
+    padding: 0 15px;
+    width: 45px;
+    height: 45px;
+  }
+}
+
 
