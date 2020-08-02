@@ -11,24 +11,25 @@
   padding-top: 20px;
 }
 
-.works__project {
+.works__thumbnail {
   margin: 30px auto 0;
 }
 
-.project {
+.thumbnail {
   max-width: 328px;
 }
 
-.project__content {
+.thumbnail__content {
   position: relative;
   margin-top: 20px;
+  box-shadow: 3px 3px 10px 0 rgba(0,0,0,0.3);
 }
 
-.project__image {
+.thumbnail__image {
   margin: 0 auto;
 }
 
-.project__overlay {
+.thumbnail__overlay {
   position: absolute;
   top: 0;right: 0;bottom: 0;left: 0;
   background-color: transparent;
@@ -53,16 +54,14 @@
   }
 }
 
-.project__content:hover .project__overlay:before,
-.project__content:hover .project__overlay:after {
+.thumbnail__content:hover .thumbnail__overlay:before,
+.thumbnail__content:hover .thumbnail__overlay:after {
   width: 100%;
   transition: all var(--hover-transition);
 }
 
-.project__nav {
+.thumbnail__nav {
   visibility: hidden;
-  display: flex;
-  flex-direction: column;
   position: absolute;
   top: 50%;
   left: 0;
@@ -73,25 +72,29 @@
   transition: .5s;
 }
 
-.project__content:hover .project__nav {
+.thumbnail__content:hover .thumbnail__nav {
   visibility: visible;
   transition: all var(--hover-transition);
 }
 
-.project__link {
-  position: relative;
-  color: $white;
+.project-link {
+  display: block;
   font-weight: 700;
-  margin: 20px 0;
-  padding: 20px 0;
-  visibility: hidden;
-  opacity: 1;
+  padding: 15px 0;
   &:hover {
     color: $green-links;
   }
 }
 
+.thumbnail__project-link {
+  color: $white;
+  margin: 20px 0;
+
+  visibility: hidden;
+}
+
 .github-link {
+  position: relative;
   &:before {
     content: "";
     position: absolute;
@@ -99,37 +102,38 @@
     height: 25px;
     background: url(./components/works/github.svg);
     background-repeat: no-repeat;
-    left: 17%;
-    top: 37%;
   }
+}
+
+.thumbnail__github-link {
+  &:before {
+    left: 20%;
+    top: 30%;
+  }
+}
+
+.fromBottomToTop,
+.fromTopToBottom {
+  opacity: 0;
+  transition: all .6s;
 }
 
 .fromTopToBottom {
   transform: translateY(-45px);
-  opacity: 0;
-  z-index: 7;
-  -webkit-transition: all .6s;
-  transition: all .6s;
 }
 
 .fromBottomToTop {
   transform: translateY(45px);
-  opacity: 0;
-  z-index: 7;
-  -webkit-transition: all .6s;
-  transition: all .6s;
 }
 
-.project__overlay:hover .fromBottomToTop,
-.project__overlay:hover .fromTopToBottom,
-.project__overlay:hover .project__link {
+.thumbnail__overlay:hover .thumbnail__project-link {
   transform: translateY(0);
   opacity: 1;
   transition: all .6s;
   visibility: visible;
 }
 
-.work-description {
+.project {
   position: fixed;
   width: 100%;
   height: 100%;
@@ -138,7 +142,7 @@
   z-index: 3;
 }
 
-.work-description__content {
+.project__content {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -147,15 +151,48 @@
   max-height: 500px;
   background-color: #fff;
   transform: translateX(-50%) translateY(-50%);
-  padding: 5px;
   overflow: auto;
 }
 
-.work-description__close {
+.project__close {
+  display: inline-block;
   position: absolute;
   right: 2%;
-  display: inline-block;
+  padding: 2%;
+  font-weight: 700;
+  font-size: 20px;
 }
+
+.project__title {
+  margin-top: 30px;
+}
+
+.project__text {
+  margin-top: 15px;
+  padding: 0 10px;
+}
+
+.stack-info {
+  font-style: italic;
+  span {
+    font-weight: 700;
+    text-decoration: underline;
+    font-style: normal;
+  }
+}
+
+.project__navigation {
+  position: relative;
+}
+
+.project__github-link {
+  margin-left: 5%;
+  &:before {
+    left: 17%;
+    top: 24%;
+  }
+}
+
 
 @media(min-width: 400px) {
   .works__brushstrokes {
@@ -164,14 +201,13 @@
 }
 
 @media (min-width: 576px) {
-  .work-description__content {
+  .project__content {
     width: 60%;
   }
 }
 
-
 @media (min-width: 768px) {
-  .work-description__content {
+  .project__content {
     width: 50%;
     padding: 10px;
   }
@@ -187,23 +223,17 @@
     flex-wrap: wrap;
   }
 
-  .works__project {
+  .works__thumbnail {
     padding: 0 .5rem;
   }
 
-  .work-description__content {
+  .project__content {
     width: 40%;
   }
 }
 
 @media (min-width: 1200px) {
-  .work-description__content {
+  .project__content {
     width: 25%;
   }
 }
-
-#git-object {
-  width: 40px;
-  height: 40px;
-}
-
