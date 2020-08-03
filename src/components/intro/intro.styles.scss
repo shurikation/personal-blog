@@ -1,35 +1,30 @@
 .intro {
   position: relative;
+  height: 100vh;
+  background-image: url(./components/intro/wallpaper-copy-2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 25% 0;
+  z-index: 1;
 }
 
 .intro::before {
   content: '';
   position: absolute;
   height: 100vh;
-  width: 100vw;
-  background-color: rgba(0, 0, 0, 0.60);
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.70);
+  z-index: -1;
 }
 
-.main__intro {
-
-}
-
-.intro__bg-wrap {
-
-}
-
-.intro__bg-image {
-  height: 100vh;
-  width: 100vw;
-  object-fit: cover;
-  object-position: 25%;
+.intro__wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 180px;
 }
 
 .intro__description {
-  position: absolute;
-  top: 45%;
-  left: 10%;
-  max-width: 80%;
+  margin-top: 100px;
 }
 
 .intro__title {
@@ -50,25 +45,32 @@
 }
 
 .intro__socials {
-  visibility: hidden;
+  display: none
 }
 
 @media (min-width: 576px) {
   .intro__socials {
-    visibility: visible;
-    position: absolute;
-    top: 20%;
-    right: 10%;
+    position: relative;
+    display: flex;
     flex-direction: column-reverse;
     &:before,
     &:after {
+      position: absolute;
       content: '';
       width: 2px;
       height: 30px;
       background-color: $icon-circle;
-      margin-left: 45%;
+    }
+    &:before {
+      top: -7%;
+      left: 47%;
+    }
+    &:after {
+      bottom: -7%;
+      left: 47%;
     }
   }
+
   .intro__icon {
     padding: 15px 0;
   }
@@ -86,11 +88,27 @@
   }
 }
 
-@media (max-height: 576px) {
+@media (max-height: 500px) {
+  .intro__wrapper {
+    padding-top: 130px;
+  }
+
   .intro__socials {
+    display: flex;
     flex-direction: row;
-    right: 25%;
-    top: 45%;
+    //padding-top: 110px;
+    &:before,
+    &:after {
+      display: none;
+    }
+  }
+
+  .intro__description {
+    margin-top: 0;
+  }
+
+  .intro__icon {
+    padding: 0 5px;
   }
 }
 
@@ -105,16 +123,16 @@
     font-size: 32px;
   }
 
+  //.intro__description {
+  //  //margin-top: 320px;
+  //}
+
   .intro__subtitle {
     font-size: 20px;
   }
 
   .intro__button {
     font-size: 18px;
-  }
-
-  .intro__socials {
-    right: 5%;
   }
 }
 

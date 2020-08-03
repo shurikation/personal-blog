@@ -5,8 +5,8 @@
 }
 
 .container {
-  padding: 0 15px;
   margin: 0 auto;
+  padding: 0 15px;
 }
 
 .collapsed {
@@ -70,14 +70,12 @@
 @media (min-width: 768px) {
   .container {
     max-width: 720px;
-    padding: 0 2rem;
   }
 }
 
 @media (min-width: 992px) {
   .container {
     max-width: 960px;
-    padding: 0 2.5rem;
   }
 
   .main-title {

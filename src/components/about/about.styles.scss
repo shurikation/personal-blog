@@ -1,9 +1,10 @@
 .about {
   position: relative;
+  z-index: 1;
 }
 
 .about__brushstrokes {
-  margin-top: -17%;
+  margin-top: -6%;
 }
 
 .main__about {
@@ -69,9 +70,9 @@
 
 
 @media (min-width: 440px) {
-  .about__brushstrokes {
-    margin-top: -15%;
-  }
+  //.about__brushstrokes {
+  //  margin-top: -15%;
+  //}
 }
 
 @media (min-width: 567px) {
@@ -79,9 +80,9 @@
     padding: 0 1rem;
   }
 
-  .about__brushstrokes {
-    margin-top: -7%;
-  }
+  //.about__brushstrokes {
+  //  margin-top: -7%;
+  //}
 }
 
 @media (min-width: 992px) {
