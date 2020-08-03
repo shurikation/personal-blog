@@ -1,40 +1,69 @@
+@import "../../vars";
+
 .header {
   position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  padding: .5rem 0;
-  background-color: transparent;
-  z-index: 1;
+  width: 100%;
+  background-color: $white;
+  z-index: 2;
 }
 
-.header__wrap {
+.header__wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: .5rem 0;
+  background-color: $white;
 }
 
-//Оставить текст или сделать логотипом?
 .header__logo {
   padding: .5rem 0;
-  color: #fff;
+  color: $black;
   font-weight: 700;
-  font-size: 18px;
-}
-
-.header__navbar {
-  margin-right: 2rem;
+  font-size: 20px;
 }
 
 .navbar {
-  display: none;
+  display: block;
+  position: absolute;
+  width: 100%;
+  top: -300%;
+  left: 0;
+  transition: all 0.5s ease 0s;
+  z-index: -1;
+  background: $white;
+  //padding: 0 5%;
+  //margin: auto;
+  //right: 0;
+  //bottom: 0;
+}
+
+.container-2 {
+    max-width: 540px;
+}
+
+.navbar--opened {
+  top: 90%;
+  transition: all 0.5s ease 0s;
+}
+
+.navbar__link {
+  display: inline-block;
+  color: $black;
+  padding: 20px 20px 20px 0;
+  font-weight: 500;
+  width: 100%;
+  transition: var(--hover-transition);
+}
+
+.navbar__list {
+  background-color: $white;
 }
 
 .header__toggler {
   position: relative;
   width: 35px;
   height: 3px;
-  background-color: #fff;
+  background-color: $black;
   transition: background-color 1s;
   border: none;
   &::before,
@@ -43,7 +72,7 @@
     position: absolute;
     width: inherit;
     height: inherit;
-    background-color: #fff;
+    background-color: $black;
     transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
     left: 0;
   }
