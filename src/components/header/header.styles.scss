@@ -1,9 +1,33 @@
 @import "../../vars";
 
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-50px);
+    -ms-transform: translateY(-50px);
+    transform: translateY(-50px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInUp {
+  0% {
+    background-color: white;
+  }
+
+  100% {
+    background-color: transparent;
+  }
+}
+
 .header {
-  position: fixed;
+  position: absolute;
   width: 100%;
-  background-color: $white;
   z-index: 2;
 }
 
@@ -12,33 +36,42 @@
   justify-content: space-between;
   align-items: center;
   padding: .5rem 0;
-  background-color: $white;
+}
+
+.header,
+.header__wrapper {
+  background-color: transparent;
 }
 
 .header__logo {
   padding: .5rem 0;
-  color: $black;
+  color: $white;
   font-weight: 700;
   font-size: 20px;
+}
+
+.header--fixed {
+  position: fixed;
+  -webkit-animation: .7s ease-in-out 0s forwards 1 fadeInDown;
+  animation: .7s ease-in-out 0s forwards 1 fadeInDown;
+  -webkit-box-shadow: 0 10px 15px rgba(25, 25, 25, 0.1);
+  box-shadow: 0 10px 15px rgba(25, 25, 25, 0.1);
+}
+
+.header--unfixed {
+  -webkit-animation: .7s ease-in-out 0s forwards 1 fadeInUp;
+  animation: .7s ease-in-out 0s forwards 1 fadeInUp;
 }
 
 .navbar {
   display: block;
   position: absolute;
   width: 100%;
-  top: -300%;
+  top: -380%;
   left: 0;
   transition: all 0.5s ease 0s;
   z-index: -1;
   background: $white;
-  //padding: 0 5%;
-  //margin: auto;
-  //right: 0;
-  //bottom: 0;
-}
-
-.container-2 {
-    max-width: 540px;
 }
 
 .navbar--opened {
@@ -49,9 +82,9 @@
 .navbar__link {
   display: inline-block;
   color: $black;
-  padding: 20px 20px 20px 0;
+  padding: 15px 0 10px 15px;
   font-weight: 500;
-  width: 100%;
+  //width: 100%;
   transition: var(--hover-transition);
 }
 
@@ -63,16 +96,17 @@
   position: relative;
   width: 35px;
   height: 3px;
-  background-color: $black;
+  background-color: $white;
   transition: background-color 1s;
   border: none;
+  outline: none;
   &::before,
   &::after {
     content: '';
     position: absolute;
     width: inherit;
     height: inherit;
-    background-color: $black;
+    background-color: inherit;
     transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
     left: 0;
   }
@@ -89,6 +123,7 @@
   transition: background-color 0.1s;
   &::before,
   &::after {
+    background-color: $black;
     top: 0;
     transition: top 0.2s linear, transform 0.2s ease-in 0.2s;
   }
@@ -96,7 +131,7 @@
     transform: rotate(45deg);
   }
   &::after {
-    transform: rotate(-45deg); //Если анимация не будет работать, возможно стоит продублировать одинаковые стили
+    transform: rotate(-45deg);
   }
 }
 
