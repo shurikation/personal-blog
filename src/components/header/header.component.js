@@ -4,6 +4,7 @@ export class Header {
   constructor(props) {
     this.$header = document.querySelector(props.header);
     this.$nav = document.querySelector(props.nav);
+    this.$links = document.querySelectorAll(props.links);
     this.$logo = document.querySelector(props.logo);
     this.$menu = document.querySelector(props.menu);
     this.$button = document.querySelector(props.button);
@@ -12,13 +13,15 @@ export class Header {
     this.open = props.open;
     this.fixed = props.fixed;
     this.unfixed = props.unfixed;
+    this.white = props.white;
+    this.black = props.black;
     this.menuHandler();
   }
 
   menuHandler() {
     this.$button.addEventListener('click', () => {
       this.buttonAndLogoColorToggler();
-      this.headerColorToggler("white");
+      this.headerColorToggler(this.white);
       this.navbarDisplayToggler();
     });
   }
@@ -32,10 +35,10 @@ export class Header {
 
   buttonAndLogoColorToggler() {
     if (this.isNavbarOpened()) {
-      this.menuButtonAndLogoColorToggler("black");
+      this.headerInnerElemsColorToggler(this.black);
     } else {
       this.$button.style.backgroundColor = "";
-      this.$logo.style.color = "black";
+      this.$logo.style.color = this.black;
     }
   }
 
@@ -43,10 +46,10 @@ export class Header {
     this.$header.classList.add(this.fixed);
     this.$header.classList.remove(this.unfixed);
 
-    this.headerColorToggler("white");
+    this.headerColorToggler(this.white);
 
     if (!this.isNavbarOpened()) {
-      this.menuButtonAndLogoColorToggler("black");
+      this.headerInnerElemsColorToggler(this.black);
     }
   }
 
@@ -55,7 +58,7 @@ export class Header {
 
     if(!this.isNavbarOpened()) {
       this.headerColorToggler("transparent");
-      this.menuButtonAndLogoColorToggler("white");
+      this.headerInnerElemsColorToggler(this.white);
       this.$header.classList.add(this.unfixed);
     }
   }
@@ -65,10 +68,6 @@ export class Header {
     this.$menu.classList.toggle(this.open);
   }
 
-  menuButtonAndLogoColorToggler(color) {
-    this.$button.style.backgroundColor = color;
-    this.$logo.style.color = color;
-  }
 
   headerColorToggler(color) {
     this.$header.style.backgroundColor = color;
@@ -76,6 +75,15 @@ export class Header {
 
     if(this.isHeaderUnfixed()) {
       this.$header.classList.remove(this.unfixed);
+    }
+  }
+
+  headerInnerElemsColorToggler(color) {
+    this.$button.style.backgroundColor = color;
+    this.$logo.style.color = color;
+
+    if(document.documentElement.clientWidth > 768) {
+      this.$links.forEach(link => link.style.color = color);
     }
   }
 

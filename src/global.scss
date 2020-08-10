@@ -2,6 +2,7 @@
 
 :root {
   --hover-transition: 0.5s;
+
 }
 
 .container {
@@ -9,12 +10,14 @@
   padding: 0 15px;
 }
 
-.collapsed {
-  display: none !important;
+.logo {
+  color: $white;
+  font-weight: 700;
+  font-size: 18px;
 }
 
-.main-title {
-
+.collapsed {
+  display: none !important;
 }
 
 .main-title,
@@ -39,9 +42,9 @@
   color: $white;
   padding: .5rem .5rem .7rem;
   border: 2px solid $green;
-  outline: none;
   transition: all var(--hover-transition);
-  &:hover {
+  &:hover,
+  &:focus {
     cursor: pointer;
     background-color: transparent;
     color: $green;
@@ -70,6 +73,10 @@
 @media (min-width: 768px) {
   .container {
     max-width: 720px;
+  }
+
+  .logo {
+    font-size: 20px;
   }
 }
 

@@ -47,10 +47,7 @@
 }
 
 .main-header__logo {
-  padding: .5rem 0;
-  color: $white;
-  font-weight: 700;
-  font-size: 20px;
+  padding: 16px 0;
 }
 
 .header--fixed {
@@ -62,19 +59,18 @@
 }
 
 .header--unfixed {
-  -webkit-animation: .7s ease-in-out 0s forwards 1 fadeInUp;
-  animation: .7s ease-in-out 0s forwards 1 fadeInUp;
+  -webkit-animation: .5s ease-in-out 0s forwards 1 fadeInUp;
+  animation: .5s ease-in-out 0s forwards 1 fadeInUp;
 }
 
-.menu {
-  display: block;
+.main-header__menu {
   position: absolute;
   width: 100%;
   top: -450%;
   left: 0;
   transition: all 0.5s ease 0s;
   z-index: -1;
-  background: $white;
+  background-color: $white;
 }
 
 .menu--opened {
@@ -86,15 +82,21 @@
   background-color: $white;
 }
 
+.menu__item:hover .menu__link,
+.menu__item:focus .menu__link,
+.menu__item:active .menu__link{
+  color: $green;
+  transition: var(--hover-transition);
+}
+
 .menu__link {
   display: inline-block;
   width: 100%;
   color: $black;
-  padding: 20px 0 20px;
+  padding: 20px 0;
   font-weight: 500;
   transition: var(--hover-transition);
 }
-
 
 .header__toggler {
   position: relative;
@@ -140,26 +142,29 @@
 }
 
 @media (min-width: 768px) {
-  .navbar {
-    display: block;
+  .main-header__menu {
+    position: static;
+    width: initial;
+    background-color: transparent;
+    z-index: 0;
   }
 
   .menu__list {
     display: flex;
+    background-color: transparent;
   }
 
   .menu__item {
     position: relative;
-    margin-left: 2.5rem;
-    padding: 0.5rem 0;
+    margin-left: 55px;
+    padding: 0;
     &::before {
       content: "";
       position: absolute;
-      //top: 0;
       bottom: 0;
       left: 0;
       right: 0;
-      border-bottom: 2px solid $green-links;
+      border-bottom: 2px solid $green;
       transition: 0.2s;
       transform: scaleX(0);
     }
@@ -171,16 +176,11 @@
     transform: scale(1);
   }
 
-  .menu__item:hover .menu__link {
-    color: $green-links;
-    transition: var(--hover-transition);
-  }
-
   .menu__link {
     color: #fff;
     text-transform: uppercase;
-    font-size: 16px;
     transition: var(--hover-transition);
+    padding: 10px 0 5px;
   }
 
   .header__toggler {
@@ -191,10 +191,6 @@
 @media (min-width: 1200px) {
   .menu__link {
     font-size: 18px;
-  }
-
-  .menu__item {
-    margin-left: 4rem;
-    padding: 0.8rem 0 0.5rem 0;
+    padding: 15px 0 5px;
   }
 }
