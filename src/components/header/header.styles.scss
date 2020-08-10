@@ -25,25 +25,28 @@
   }
 }
 
-.header {
+.main-header {
   position: absolute;
   width: 100%;
   z-index: 2;
 }
 
-.header__wrapper {
+.nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: .5rem 0;
 }
 
-.header,
+.main-header__nav {
+  padding: 16px 0;
+}
+
+.main-header,
 .header__wrapper {
   background-color: transparent;
 }
 
-.header__logo {
+.main-header__logo {
   padding: .5rem 0;
   color: $white;
   font-weight: 700;
@@ -63,34 +66,35 @@
   animation: .7s ease-in-out 0s forwards 1 fadeInUp;
 }
 
-.navbar {
+.menu {
   display: block;
   position: absolute;
   width: 100%;
-  top: -380%;
+  top: -450%;
   left: 0;
   transition: all 0.5s ease 0s;
   z-index: -1;
   background: $white;
 }
 
-.navbar--opened {
+.menu--opened {
   top: 90%;
   transition: all 0.5s ease 0s;
 }
 
-.navbar__link {
+.menu__list {
+  background-color: $white;
+}
+
+.menu__link {
   display: inline-block;
+  width: 100%;
   color: $black;
-  padding: 15px 0 10px 15px;
+  padding: 20px 0 20px;
   font-weight: 500;
-  //width: 100%;
   transition: var(--hover-transition);
 }
 
-.navbar__list {
-  background-color: $white;
-}
 
 .header__toggler {
   position: relative;
@@ -140,11 +144,11 @@
     display: block;
   }
 
-  .navbar__list {
+  .menu__list {
     display: flex;
   }
 
-  .navbar__item {
+  .menu__item {
     position: relative;
     margin-left: 2.5rem;
     padding: 0.5rem 0;
@@ -161,18 +165,18 @@
     }
   }
 
-  .navbar__item:hover::before {
+  .menu__item:hover::before {
     cursor: pointer;
     transition: var(--hover-transition);
     transform: scale(1);
   }
 
-  .navbar__item:hover .navbar__link {
+  .menu__item:hover .menu__link {
     color: $green-links;
     transition: var(--hover-transition);
   }
 
-  .navbar__link {
+  .menu__link {
     color: #fff;
     text-transform: uppercase;
     font-size: 16px;
@@ -185,11 +189,11 @@
 }
 
 @media (min-width: 1200px) {
-  .navbar__link {
+  .menu__link {
     font-size: 18px;
   }
 
-  .navbar__item {
+  .menu__item {
     margin-left: 4rem;
     padding: 0.8rem 0 0.5rem 0;
   }

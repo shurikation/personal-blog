@@ -3,10 +3,10 @@ import {ScrollHandler} from "../../scroll-handler";
 export class Header {
   constructor(props) {
     this.$header = document.querySelector(props.header);
-    this.$headerWrap = document.querySelector(props.headerWrap);
+    this.$nav = document.querySelector(props.nav);
     this.$logo = document.querySelector(props.logo);
-    this.$navbar = document.querySelector(props.navbar);
-    this.$menuButton = document.querySelector(props.menuButton);
+    this.$menu = document.querySelector(props.menu);
+    this.$button = document.querySelector(props.button);
     this.$animationTriggerElem = document.querySelector(props.animationTriggerElem);
     this.active = props.active;
     this.open = props.open;
@@ -16,7 +16,7 @@ export class Header {
   }
 
   menuHandler() {
-    this.$menuButton.addEventListener('click', () => {
+    this.$button.addEventListener('click', () => {
       this.buttonAndLogoColorToggler();
       this.headerColorToggler("white");
       this.navbarDisplayToggler();
@@ -34,7 +34,7 @@ export class Header {
     if (this.isNavbarOpened()) {
       this.menuButtonAndLogoColorToggler("black");
     } else {
-      this.$menuButton.style.backgroundColor = "";
+      this.$button.style.backgroundColor = "";
       this.$logo.style.color = "black";
     }
   }
@@ -61,18 +61,18 @@ export class Header {
   }
 
   navbarDisplayToggler() {
-    this.$menuButton.classList.toggle(this.active);
-    this.$navbar.classList.toggle(this.open);
+    this.$button.classList.toggle(this.active);
+    this.$menu.classList.toggle(this.open);
   }
 
   menuButtonAndLogoColorToggler(color) {
-    this.$menuButton.style.backgroundColor = color;
+    this.$button.style.backgroundColor = color;
     this.$logo.style.color = color;
   }
 
   headerColorToggler(color) {
     this.$header.style.backgroundColor = color;
-    this.$headerWrap.style.backgroundColor = color;
+    this.$nav.style.backgroundColor = color;
 
     if(this.isHeaderUnfixed()) {
       this.$header.classList.remove(this.unfixed);
@@ -80,7 +80,7 @@ export class Header {
   }
 
   isNavbarOpened() {
-    return this.$menuButton.classList.contains(this.active);
+    return this.$button.classList.contains(this.active);
   }
 
   isHeaderUnfixed() {

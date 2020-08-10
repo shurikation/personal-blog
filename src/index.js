@@ -4,14 +4,14 @@ import {Header} from "./components/header/header.component";
 const scrollHandler = new ScrollHandler();
 
 export const header = new Header({
-  header: '.header',
-  headerWrap: '.header__wrapper',
-  logo: '.header__logo',
-  navbar: '.navbar',
-  menuButton: '.header__toggler',
+  header: '.main-header',
+  nav: '.main-header__nav',
+  logo: '.main-header__logo',
+  menu: '.menu',
+  button: '.header__toggler',
   active: 'toggler--active',
-  open: 'navbar--opened',
-  animationTriggerElem: '.intro__title',
+  open: 'menu--opened',
   fixed: 'header--fixed',
-  unfixed: 'header--unfixed'
+  unfixed: 'header--unfixed',
+  animationTriggerElem: '.intro__title'
 });
