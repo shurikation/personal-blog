@@ -15,52 +15,61 @@ export class Header {
     this.unfixed = props.unfixed;
     this.white = props.white;
     this.black = props.black;
+
+    this.elemIsScrolled = false;
+    this.headerIsFixed = false;
+    this.screenWidth = 768;//px
+
     this.menuHandler();
   }
 
   menuHandler() {
     this.$button.addEventListener('click', () => {
-      this.buttonAndLogoColorToggler();
-      this.headerColorToggler(this.white);
       this.navbarDisplayToggler();
+      this.innerElemsClickHandler();
+      this.headerColorToggler(this.white);
     });
   }
 
-  styleHandler() {
-    (ScrollHandler.isElemScrolledDown(this.$animationTriggerElem))
-      ? this.headerFixed()
-      : this.headerUnfixed()
-    }
+  fixingHandler() {
+    ScrollHandler.isElemScrolledDown(this.$animationTriggerElem)
+        ? this.elemIsScrolled = true
+        : this.elemIsScrolled = false;
 
-
-  buttonAndLogoColorToggler() {
-    if (this.isNavbarOpened()) {
-      this.headerInnerElemsColorToggler(this.black);
-    } else {
-      this.$button.style.backgroundColor = "";
-      this.$logo.style.color = this.black;
-    }
+    if (this.elemIsScrolled && !this.headerIsFixed) this.fixHeader();
+    if (!this.elemIsScrolled && this.headerIsFixed) this.unfixHeader();
   }
 
-  headerFixed() {
+  fixHeader() {
+    this.headerIsFixed = true;
+
     this.$header.classList.add(this.fixed);
     this.$header.classList.remove(this.unfixed);
 
-    this.headerColorToggler(this.white);
+    this.$button.style.backgroundColor = this.black;
+    this.$logo.style.color = this.black;
 
-    if (!this.isNavbarOpened()) {
-      this.headerInnerElemsColorToggler(this.black);
+    if(this.isNavbarOpen()) {
+      this.$button.style.backgroundColor = "transparent";
     }
+
+    this.headerColorToggler(this.white);
+    this.linksColorToggler();
   }
 
-  headerUnfixed() {
+  unfixHeader() {
+    this.headerIsFixed = false;
+
     this.$header.classList.remove(this.fixed);
 
-    if(!this.isNavbarOpened()) {
+    if (!this.isNavbarOpen()) {
       this.headerColorToggler("transparent");
-      this.headerInnerElemsColorToggler(this.white);
       this.$header.classList.add(this.unfixed);
+      this.$button.style.backgroundColor = null;
+      this.$logo.style.color = null;
     }
+
+    this.linksColorToggler();
   }
 
   navbarDisplayToggler() {
@@ -68,30 +77,41 @@ export class Header {
     this.$menu.classList.toggle(this.open);
   }
 
-
   headerColorToggler(color) {
     this.$header.style.backgroundColor = color;
     this.$nav.style.backgroundColor = color;
 
-    if(this.isHeaderUnfixed()) {
+    if (this.isHeaderUnfix()) {
       this.$header.classList.remove(this.unfixed);
     }
   }
 
-  headerInnerElemsColorToggler(color) {
-    this.$button.style.backgroundColor = color;
-    this.$logo.style.color = color;
+  innerElemsClickHandler() {
+    if (this.isNavbarOpen()) {
+      this.$logo.style.color = this.black;
+      this.$button.style.backgroundColor = "transparent";
+    }
 
-    if(document.documentElement.clientWidth > 768) {
-      this.$links.forEach(link => link.style.color = color);
+    if (!this.isNavbarOpen()) {
+      this.$button.style.backgroundColor = this.black;
     }
   }
 
-  isNavbarOpened() {
+  linksColorToggler() {
+    if (this.headerIsFixed && document.documentElement.clientWidth > this.screenWidth) {
+      this.$links.forEach(link => link.style.color = this.black);
+    }
+
+    if (!this.headerIsFixed) {
+      this.$links.forEach(link => link.style.color = null);
+    }
+  }
+
+  isNavbarOpen() {
     return this.$button.classList.contains(this.active);
   }
 
-  isHeaderUnfixed() {
+  isHeaderUnfix() {
     return this.$header.classList.contains(this.unfixed);
   }
 }

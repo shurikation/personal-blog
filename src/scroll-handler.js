@@ -15,11 +15,7 @@ export class ScrollHandler {
   throttleScroll() {
     if (this.isScrolling === false) {
       window.requestAnimationFrame(() => {
-        //запуск проверки можно уже что-то включать или нет
-
-        header.styleHandler();
-        // factsCounter.isCountersShouldBeRunning();
-
+        header.fixingHandler();
         this.isScrolling = false;
       });
     }
