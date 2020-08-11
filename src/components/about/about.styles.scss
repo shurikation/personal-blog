@@ -53,11 +53,10 @@
 .contacts__link {
   margin-left: 10px;
   font-style: normal;
-  //font-weight: 700;
-  //font-size: 18px;
   color: $grey;
   text-decoration: underline;
-  &:hover {
+  &:hover,
+  &:focus {
     cursor: pointer;
     color: $green;
     transition: var(--hover-transition);
