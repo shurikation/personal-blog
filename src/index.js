@@ -1,6 +1,12 @@
+import {Preloader} from "./components/preloader/preloader.component";
 import {ScrollHandler} from "./components/scroll-handler";
 import {Header} from "./components/header/header.component";
 import {AutoTyper} from "./components/intro/auto-typer";
+
+const preloader = new Preloader({
+
+});
+
 
 const scrollHandler = new ScrollHandler();
 
@@ -25,3 +31,4 @@ const autoTyper = new AutoTyper( {
   engText: "front-end developer",
   elem: ".intro__subtitle--autoText"
 });
+

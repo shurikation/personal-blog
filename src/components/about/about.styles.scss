@@ -22,17 +22,71 @@
   box-shadow: 3px 3px 10px 0 rgba(0,0,0,0.6);
 }
 
-.about__personal {
+.project-image {
+  height: 100%;
+}
+
+.about__description {
   margin-top: 20px;
 }
 
-.personal__title {
-  text-align: center;
+.description__text {
+  margin-bottom: 10px;
+  span {
+    font-weight: 700;
+  }
 }
 
-.personal__text {
-  margin-bottom: 10px;
+.description__link {
+  display: inline-block;
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 20px;
+  text-decoration: underline;
+  font-style: normal;
+  transition: color var(--hover-transition);
+  &:before {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 0;
+    left: 0;
+  }
+  &:hover {
+    color: $green;
+    transition: color var(--hover-transition);
+  }
 }
+
+.email-link {
+  &:before {
+    background: url(./components/about/email.svg) no-repeat;
+  }
+}
+
+.telegram-link {
+  &:before {
+    background: url(./components/about/telegram.svg) no-repeat;
+  }
+}
+
+.github-link {
+  &:before {
+    background: url(./components/about/github.svg) no-repeat;
+  }
+}
+
+.website-link {
+  &:before {
+    background: url(./components/about/website.svg) no-repeat;
+  }
+}
+
+
+
+
+
 
 .about__button {
   margin-top: auto;
@@ -44,29 +98,29 @@
   flex-direction: column;
 }
 
-.contacts__contact-wrapper {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.contacts__link {
-  margin-left: 10px;
-  font-style: normal;
-  color: $grey;
-  text-decoration: underline;
-  &:hover,
-  &:focus {
-    cursor: pointer;
-    color: $green;
-    transition: var(--hover-transition);
-  }
-}
-
-.contacts__img {
-  width: 25px;
-  height: 25px;
-}
+//.contacts__contact-wrapper {
+//  display: flex;
+//  align-items: center;
+//  margin-bottom: 10px;
+//}
+//
+//.contacts__link {
+//  margin-left: 10px;
+//  font-style: normal;
+//  color: $grey;
+//  text-decoration: underline;
+//  &:hover,
+//  &:focus {
+//    cursor: pointer;
+//    color: $green;
+//    transition: var(--hover-transition);
+//  }
+//}
+//
+//.contacts__img {
+//  width: 25px;
+//  height: 25px;
+//}
 
 
 @media (min-width: 440px) {
@@ -106,7 +160,7 @@
     margin-left: 20px;
   }
 
-  .about__personal {
+  .about__description {
     margin-top: 0;
   }
 

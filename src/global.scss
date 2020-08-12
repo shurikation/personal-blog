@@ -24,16 +24,16 @@
 }
 
 .main-title,
-.minor-title {
+.sub-title {
   color: $black;
   text-align: center;
 }
 
-.minor-title {
+.sub-title {
   font-size: 18px;
 }
 
-.text {
+.main-text {
   color: $grey;
   text-align: justify;
   line-height: 1.3em;
@@ -68,7 +68,7 @@
     font-size: 26px;
   }
 
-  .minor-title {
+  .sub-title {
     font-size: 19px;
   }
 }
@@ -96,11 +96,11 @@
     font-size: 28px;
   }
 
-  .minor-title {
+  .sub-title {
     font-size: 20px;
   }
 
-  .text {
+  .main-text {
     font-size: 17px;
   }
 
@@ -115,7 +115,7 @@
     font-size: 30px;
   }
 
-  .text {
+  .main-text {
     font-size: 18px;
   }
 }

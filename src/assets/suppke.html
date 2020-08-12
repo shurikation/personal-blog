@@ -14,9 +14,9 @@
             <div class="main-header__menu menu">
                 <div class="container">
                     <ul class="menu__list">
-                        <li class="menu__item"><a class="menu__link" href="#">Наверх</a></li>
-                        <li class="menu__item"><a class="menu__link" href="#about">Обо мне</a></li>
-                        <li class="menu__item"><a class="menu__link" href="#works">Проекты</a></li>
+                        <li class="menu__item"><a class="menu__link" target="_blank" rel="noopener" href="../index.html">Главная</a></li>
+                        <li class="menu__item"><a class="menu__link" target="_blank" rel="noopener" href="../index.html#about">Обо мне</a></li>
+                        <li class="menu__item"><a class="menu__link" target="_blank" rel="noopener" href="../index.html#works">Проекты</a></li>
                     </ul>
                 </div>
             </div>
@@ -49,32 +49,38 @@
         <div class="container">
             <h2 class="about__title main-title">Описание проекта</h2>
             <div class="about__content">
-                <img class="about__image" src="../components/works/suppke_2.jpg" alt="suppke">
+                <img class="about__image project-image" src="../components/works/suppke_2.jpg" alt="suppke">
                 <div class="about__info">
-                    <div class="about__personal">
-                        <p class="personal__text text">
-                            Одностраничный сайт.
-                            Реализована корзина, возможность добавления/удаления и подсчета стоимости товаров.
-                            Добавлены слайдер, сортировка каталога товаров по категориям, разичные анимации на css,
-                            javascript.
-                            Отправка заказа, а также сообщения через форму обратной связи, происходит в формате json на
-                            фейк-сервер jsonplaceholder..</p>
-                        <p class="personal__text text"></p>
-                        <p class="personal__text text"></p>
-                        <p class="project__text stack-info text"><span>Стэк:</span> javaScript, HTML, SCSS. Без
-                            использования-->
-                            <nav class="project__navigation">
-                                <a class="project-link github-link project__github-link"
-                                   href="https://github.com/shurikation/suppke" target="_blank" rel="nofollow noopener">Код
-                                    на
-                                    GitHub</a>
-                                <a class="project-link website-link project__github-link"
-                                   href="https://shurikation.github.io/suppke/src/index.html"
-                                   target="_blank" rel="nofollow noopener">Перейти на сайт проекта</a>
-                            </nav>
-                    </div>
+                    <p class="about__description">
+                    <p class="description__text main-text">
+                        Клиентская часть одностраничного сайта по продаже спортивного питания.
+                        Реализована корзина, возможность добавления/удаления и динамического
+                        подсчета стоимости товаров.</p>
+                    <p class="description__text main-text">
+                        Отправка заказа, а также сообщения пользователя через форму обратной связи, происходит на
+                        фейк-сервер jsonplaceholder. Тело запросов выводится в консоль.</p>
+                    <p class="description__text main-text"> На больших экранах в разделе "Видео" есть возможность просмотра ролика: обращение к youTube API
+                        и загрузка видео происходит только в момент нажатия на кнопку play, а не вместе с основным
+                        контентом сайта. Это позволило существенно улучшить скорость загрузку страницы</p>
+                    <p class="description__text main-text">
+                        Помимо этого, реализован слайдер, сортировка каталога товаров по категориям, интерактивная
+                        анимация с изображением человечков, а также анимированный счетчик фактов
+                        о компании.</p>
+                    <p class="description__text main-text"><span>Стэк:</span> vanilla JavaScript, HTML, SCSS
+                       </p>
+                    <ul>
+                        <li>
+                            <a class="description__link github-link main-text" target="_blank" rel="nofollow noopener"
+                               href="https://github.com/shurikation/suppke">Код на GitHub</a>
+                        </li>
+                        <li>
+                            <a class="description__link website-link main-text" target="_blank" rel="nofollow noopener"
+                               href="https://shurikation.github.io/suppke/src/index.html">Перейти на сайт</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
+        </div>
         </div>
     </section>
 </main>
