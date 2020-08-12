@@ -5,6 +5,7 @@
 
 .main__works {
   margin-top: 30px;
+  //padding-bottom: 30px;
 }
 
 .works__title {
@@ -83,10 +84,11 @@
 
 .project-link {
   display: block;
-  padding: 15px 0;
-  opacity: 0;
+  padding: 10px 0;
+  //padding: 15px 0;
+  //opacity: 0;
   &:hover {
-    color: $green-links;
+    color: $green;
   }
 }
 
@@ -108,12 +110,24 @@
   }
 }
 
-.thumbnail__github-link {
+.website-link {
+  position: relative;
   &:before {
-    left: 15%;
-    top: 25%;
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: url(./components/works/website.svg);
+    background-repeat: no-repeat;
   }
 }
+
+//.thumbnail__github-link {
+//  &:before {
+//    left: 15%;
+//    top: 25%;
+//  }
+//}
 
 .fromBottomToTop,
 .fromTopToBottom {
@@ -172,7 +186,7 @@
 
 .project__text {
   margin-top: 15px;
-  padding: 0 10px;
+  //padding: 0 10px;
 }
 
 .stack-info {
@@ -188,12 +202,18 @@
   position: relative;
 }
 
+
+
 .project__github-link {
   margin-left: 5%;
   &:before {
-    left: 17%;
-    top: 24%;
+    left: -6%;
+    top: 7px;
   }
+}
+
+.works__brushstrokes--bottom {
+  padding-top: 40px;
 }
 
 

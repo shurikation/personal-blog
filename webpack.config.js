@@ -16,7 +16,7 @@ module.exports = {
   output: {
     filename: '[name].js',
     chunkFilename: '[name].chunk.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, './dist')
   },
   devServer: {
     contentBase: './dist',
@@ -33,7 +33,14 @@ module.exports = {
   },
   plugins: [
     new HTMLWebpackPlugin({
-      template: './src/index.html'
+      template: './src/index.html',
+      // minify: true
+      // base: 'http://popovalex.ru'
+    }),
+    new HTMLWebpackPlugin({
+      filename: './assets/suppke.html',
+      template: './src/assets/suppke.html',
+      // minify: true
     }),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
@@ -47,6 +54,7 @@ module.exports = {
           globOptions: {
             ignore: [
               '**/*.scss',
+              '**/*.js'
             ],
           },
         },

@@ -19,6 +19,10 @@
   display: none !important;
 }
 
+.hidden {
+  visibility: hidden;
+}
+
 .main-title,
 .minor-title {
   color: $black;
@@ -77,6 +81,10 @@
   .logo {
     font-size: 20px;
   }
+
+  .button {
+    font-size: 18px;
+  }
 }
 
 @media (min-width: 992px) {
@@ -95,6 +103,7 @@
   .text {
     font-size: 17px;
   }
+
 }
 
 @media (min-width: 1200px) {

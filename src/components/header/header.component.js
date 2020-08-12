@@ -1,4 +1,4 @@
-import {ScrollHandler} from "../../scroll-handler";
+import {ScrollHandler} from "../scroll-handler";
 
 export class Header {
   constructor(props) {
