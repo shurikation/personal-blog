@@ -64,153 +64,57 @@
   transition: all var(--hover-transition);
 }
 
-.thumbnail__nav {
+.thumbnail__item {
   visibility: hidden;
   position: absolute;
-  top: 50%;
+  top: 45%;
   left: 0;
-  transform: translateY(-50%);
   width: 100%;
   text-align: center;
   z-index: 2;
-  transition: .5s;
+  color: #fff;
+  transition: all var(--hover-transition);
+  &--top {
+    top: 20%;
+  }
+  &--bottom {
+    top: 70%;
+  }
 }
 
-.thumbnail__content:hover .thumbnail__nav {
+.thumbnail__link {
+  color: $white;
+  transition: all var(--hover-transition);
+  padding: 30px 0;
+  &:hover {
+    transition: all var(--hover-transition);
+    color: $green-links;
+  }
+}
+
+.thumbnail__content:hover .thumbnail__item {
+  transform: translateY(0);
+  opacity: 1;
   visibility: visible;
   transition: all var(--hover-transition);
 }
 
-//.project-link {
-//  display: block;
-//  padding: 10px 0;
-//  &:hover {
-//    color: $green-links;
-//  }
-//}
 
-.thumbnail__project-link {
-  color: $white;
-  margin: 20px 0;
-  visibility: hidden;
-}
-
-//.github-link {
-//  position: relative;
-//  &:before {
-//    content: "";
-//    position: absolute;
-//    width: 25px;
-//    height: 25px;
-//    //background: url(./components/works/github.svg);
-//    background-repeat: no-repeat;
-//  }
-//}
-
-//.website-link {
-//  position: relative;
-//  &:before {
-//    content: "";
-//    position: absolute;
-//    width: 25px;
-//    height: 25px;
-//    //background: url(./components/works/website.svg);
-//    background-repeat: no-repeat;
-//  }
-//}
-
-//.thumbnail__github-link {
-//  &:before {
-//    left: 15%;
-//    top: 25%;
-//  }
-//}
-
-.fromBottomToTop,
 .fromTopToBottom {
   opacity: 0;
   transition: all .6s;
-}
-
-.fromTopToBottom {
   transform: translateY(-45px);
 }
 
 .fromBottomToTop {
+  opacity: 0;
+  transition: all .7s;
   transform: translateY(45px);
 }
-
-.thumbnail__overlay:hover .thumbnail__project-link {
-  transform: translateY(0);
-  opacity: 1;
-  transition: all .6s;
-  visibility: visible;
-}
-
-//.project {
-//  position: fixed;
-//  width: 100%;
-//  height: 100%;
-//  top: 0;
-//  background-color: rgba(0, 0, 0, 0.1);
-//  z-index: 3;
-//}
-//
-//.project__content {
-//  position: absolute;
-//  top: 50%;
-//  left: 50%;
-//  width: 90%;
-//  min-height: 300px;
-//  max-height: 500px;
-//  background-color: #fff;
-//  transform: translateX(-50%) translateY(-50%);
-//  overflow: auto;
-//}
-//
-//.project__close {
-//  display: inline-block;
-//  position: absolute;
-//  right: 2%;
-//  padding: 2%;
-//  font-weight: 700;
-//  font-size: 20px;
-//}
-//
-//.project__title {
-//  margin-top: 30px;
-//}
-//
-//.project__text {
-//  margin-top: 15px;
-//  //padding: 0 10px;
-//}
-
-//.stack-info {
-//  font-style: italic;
-//  span {
-//    font-weight: 700;
-//    text-decoration: underline;
-//    font-style: normal;
-//  }
-//}
-
-//.project__navigation {
-//  position: relative;
-//}
-
-//.project__github-link {
-//  margin-left: 5%;
-//  &:before {
-//    left: -6%;
-//    top: 7px;
-//  }
-//}
 
 .works__brushstrokes--bottom {
   padding-top: 40px;
 }
-
 
 @media(min-width: 400px) {
   .works__brushstrokes {
