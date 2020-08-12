@@ -21,6 +21,7 @@ export class AutoTyper {
   }
 
   init() {
+
     this.languageSwitch();
     this.typeText();
   }

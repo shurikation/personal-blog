@@ -42,6 +42,11 @@ module.exports = {
       template: './src/assets/suppke.html',
       // minify: true
     }),
+    new HTMLWebpackPlugin({
+      filename: './assets/my-site.html',
+      template: './src/assets/my-site.html',
+      // minify: true
+    }),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: '[name].css'

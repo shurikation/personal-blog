@@ -3,11 +3,7 @@ import {ScrollHandler} from "./components/scroll-handler";
 import {Header} from "./components/header/header.component";
 import {AutoTyper} from "./components/intro/auto-typer";
 
-const preloader = new Preloader({
-
-});
-
-
+const preloader = new Preloader();
 const scrollHandler = new ScrollHandler();
 
 export const header = new Header({
@@ -23,12 +19,19 @@ export const header = new Header({
   unfixed: 'header--unfixed',
   black: "#1e1e1e",
   white: "#fff",
-  animationTriggerElem: '.intro__title'
+  animationTriggerElem: '.about__title'
 });
 
-const autoTyper = new AutoTyper( {
-  ruText: "фронтенд-разработчик",
-  engText: "front-end developer",
-  elem: ".intro__subtitle--autoText"
-});
+
+if (document.querySelector('.main-page')) {
+  const autoTyper = new AutoTyper({
+    ruText: "фронтенд-разработчик",
+    engText: "front-end developer",
+    elem: ".intro__subtitle--autoText"
+  });
+}
+
+
+
+
 
