@@ -58,6 +58,10 @@
   }
 }
 
+.description__link--medium {
+  text-decoration: underline;
+}
+
 .email-link {
   &:before {
     background: url(./components/about/email.svg) no-repeat;

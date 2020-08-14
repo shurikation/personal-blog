@@ -34,18 +34,18 @@ module.exports = {
   plugins: [
     new HTMLWebpackPlugin({
       template: './src/index.html',
-      // minify: true
+      minify: true
       // base: 'http://popovalex.ru'
     }),
     new HTMLWebpackPlugin({
       filename: './assets/suppke.html',
       template: './src/assets/suppke.html',
-      // minify: true
+      minify: true
     }),
     new HTMLWebpackPlugin({
       filename: './assets/my-site.html',
       template: './src/assets/my-site.html',
-      // minify: true
+      minify: true
     }),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
