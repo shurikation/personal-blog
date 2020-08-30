@@ -1,10 +1,10 @@
 @import "vars";
-@import "components/preloader/preloader.styles";
+@import "styles/preloader.styles";
 @import "normalize.modified";
 @import "global";
-@import "components/socials/socials.styles";
-@import "components/header/header.styles";
-@import "components/intro/intro.styles";
-@import "components/about/about.styles";
-@import "components/works/works.styles";
-@import "components/footer/footer.styles";
+@import "styles/socials.styles";
+@import "styles/header.styles";
+@import "styles/intro.styles";
+@import "styles/about.styles";
+@import "styles/works.styles";
+@import "styles/footer.styles";

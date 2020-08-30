@@ -1,4 +1,4 @@
-import {header} from "../index"
+import {header} from "../../index"
 
 export class ScrollHandler {
   constructor() {

@@ -23,7 +23,7 @@ module.exports = {
     stats: 'errors-only'
   },
   optimization: {
-    minimize: false,
+    minimize: true,
     minimizer: [
       new TerserJSPlugin({
         test: /\.js(\?.*)?$/i,
@@ -53,8 +53,8 @@ module.exports = {
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: path.resolve(__dirname, 'src', 'components'),
-          to: path.resolve(__dirname, 'dist', 'components'),
+          from: path.resolve(__dirname, 'src', 'assets'),
+          to: path.resolve(__dirname, 'dist', 'assets'),
           globOptions: {
             ignore: [
               '**/*.scss',

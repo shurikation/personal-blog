@@ -1,7 +1,7 @@
 .intro {
   position: relative;
   height: 100vh;
-  background-image: url(./components/intro/wallpaper.jpg);
+  background-image: url(./assets/intro/wallpaper.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 25% 0;
@@ -39,7 +39,7 @@
 
 .intro__subtitle--autoText {
   display: inline;
-  min-height: 28px; //AutoTyper
+  min-height: 28px; //AutoTyping
 }
 
 .dash {
