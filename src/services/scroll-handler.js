@@ -2,7 +2,7 @@ import {header} from "../index"
 
 export class ScrollHandler {
   constructor() {
-    this.distanceFromBorder = 200;
+    this.distanceFromBorder = 200;//px
     this.isScrolling = false;
     this.init();
   }
@@ -11,7 +11,6 @@ export class ScrollHandler {
     window.addEventListener("scroll", this.throttleScroll.bind(this));
   }
 
-  //to call 60 times in second / to avoid chatty of the scroll event
   throttleScroll() {
     if (this.isScrolling === false) {
       window.requestAnimationFrame(() => {

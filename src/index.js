@@ -1,7 +1,7 @@
 import {Preloader} from "./components/preloader/preloader.component";
-import {ScrollHandler} from "./components/scroll-handler";
+import {ScrollHandler} from "./services/scroll-handler";
 import {Header} from "./components/header/header.component";
-import {AutoTyper} from "./components/intro/auto-typer";
+import {AutoTyper} from "./services/auto-typer";
 
 const preloader = new Preloader();
 const scrollHandler = new ScrollHandler();

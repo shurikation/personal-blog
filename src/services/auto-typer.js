@@ -87,21 +87,3 @@ export class AutoTyper {
     this.$elem.lastChild.remove();
   }
 }
-
-// class TypingHandler {
-//   constructor() {
-//
-//   }
-// }
-//
-// class TextTyper {
-//   constructor() {
-
-//   }
-// }
-//
-// class TextRemover {
-//   constructor() {
-//
-//   }
-// }
