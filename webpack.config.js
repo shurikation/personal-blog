@@ -35,16 +35,15 @@ module.exports = {
     new HTMLWebpackPlugin({
       template: './src/index.html',
       minify: true
-      // base: 'http://popovalex.ru'
     }),
     new HTMLWebpackPlugin({
-      filename: './assets/suppke.html',
-      template: './src/assets/suppke.html',
+      filename: './pages/suppke.html',
+      template: './src/pages/suppke.html',
       minify: true
     }),
     new HTMLWebpackPlugin({
-      filename: './assets/my-site.html',
-      template: './src/assets/my-site.html',
+      filename: './pages/notebook-app.html',
+      template: './src/pages/notebook-app.html',
       minify: true
     }),
     new CleanWebpackPlugin(),

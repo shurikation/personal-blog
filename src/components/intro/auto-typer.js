@@ -11,11 +11,12 @@ export class AutoTyper {
     this.slowTypingSpeed = 400;//ms
     this.fastTypingSpeed = 100;//ms
 
-    this.pause = 2000;//ms
-    this.removingSpeed = 75;//ms
-
     this.slowTypingLength = 3;//symbols
     this.fastTypingLength = 6;//symbols
+
+    this.pause = 2000;//ms
+
+    this.removingSpeed = 75;//ms
 
     this.init();
   }
@@ -85,5 +86,22 @@ export class AutoTyper {
   deleteChar() {
     this.$elem.lastChild.remove();
   }
-
 }
+
+// class TypingHandler {
+//   constructor() {
+//
+//   }
+// }
+//
+// class TextTyper {
+//   constructor() {
+
+//   }
+// }
+//
+// class TextRemover {
+//   constructor() {
+//
+//   }
+// }
