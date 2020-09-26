@@ -1,7 +1,7 @@
 import {Preloader} from "./components/preloader.component";
 import {ScrollHandler} from "./components/services/scroll-handler";
 import {Header} from "./components/header.component";
-import {AutoTyping} from "./components/services/auto-typing";
+import {CharTyping} from "./components/services/char-typing";
 
 const preloader = new Preloader();
 const scrollHandler = new ScrollHandler();
@@ -24,7 +24,7 @@ export const header = new Header({
 
 
 if (document.querySelector('.main-page')) {
-  const autoTyper = new AutoTyping({
+  const autoTyper = new CharTyping({
     ruText: "фронтенд-разработчик",
     engText: "front-end developer",
     elem: ".intro__subtitle--autoText"

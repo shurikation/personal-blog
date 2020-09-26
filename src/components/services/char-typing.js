@@ -1,4 +1,4 @@
-export class AutoTyping {
+export class CharTyping {
   constructor(props) {
     this.chars = null;
     this.ruChars = props.ruText.split("");
