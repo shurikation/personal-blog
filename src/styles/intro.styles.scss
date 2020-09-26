@@ -43,11 +43,11 @@
 }
 
 .dash {
-  color: #fff;
+  display: inline;
+  color: $green;
   font-size: 18px;
-  animation-duration: 1s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in;
+  font-weight: 900;
+  animation: moveX 1s infinite linear;
 }
 
 .intro__title,

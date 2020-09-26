@@ -14,7 +14,7 @@ export class AutoTyping {
     this.slowTypingLength = 3;//symbols
     this.fastTypingLength = 6;//symbols
 
-    this.pause = 2000;//ms
+    this.pause = 3000;//ms
 
     this.removingSpeed = 75;//ms
 
