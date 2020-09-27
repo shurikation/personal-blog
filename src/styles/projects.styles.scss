@@ -9,12 +9,11 @@
 }
 
 .projects__brushstrokes--top {
-  transform: rotate(180deg);
+  transform: rotate(180deg) translateY(2px);
 }
 
 
 .projects__title {
-  padding-top: 20px;
   color: $white;
 }
 

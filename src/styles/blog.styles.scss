@@ -1,0 +1,51 @@
+.blog__post {
+  margin-bottom: 20px;
+}
+
+.post {
+  display: flex;
+  flex-direction: column;
+}
+
+.post__info {
+  display: flex;
+  flex-direction: column;
+}
+
+.post__image {
+  margin: 20px auto 0;
+}
+
+.post__title {
+  font-size: 24px;
+  color: $icon-circle;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: left;
+  padding-top: 20px;
+}
+
+.post__description {
+  padding: 10px 0;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.03em;
+}
+
+.post__button {
+  display: inline-block;
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+@media (min-width: 992px) {
+  .post {
+    flex-direction: row;
+  }
+
+  .post__info {
+    margin-left: 15px;
+  }
+}
+
