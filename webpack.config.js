@@ -46,6 +46,11 @@ module.exports = {
       template: './src/pages/notebook-app.html',
       minify: true
     }),
+    new HTMLWebpackPlugin({
+      filename: './blog/post-template.html',
+      template: './src/blog/post-template.html',
+      minify: true
+    }),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: '[name].css'

@@ -1,0 +1,23 @@
+.intro__template {
+  height: 50vh;
+  background-image: url(assets/intro/wallpaper.jpg);
+  &:before {
+    height: inherit;
+  }
+}
+
+.template__wrapper {
+  padding-top: 45px;
+}
+
+@media (min-width: 576px) {
+  .template__wrapper {
+    padding-top: 60px;
+  }
+}
+
+@media (min-width: 992px) {
+  .template__wrapper {
+    padding-top: 80px;
+  }
+}
