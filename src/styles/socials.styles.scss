@@ -7,10 +7,10 @@
   width: 35px;
   height: 35px;
   &__circle {
-    fill: $icon-circle;
+    fill: $middle-grey;
   }
   &__symbol {
-    fill: $icon-symbol;
+    fill: $light-grey;
   }
 }
 
@@ -31,7 +31,7 @@
 }
 
 .fb:hover .fb__symbol{
-  fill:#FFFFFF;
+  fill: $white;
 }
 
 .twitter:hover .twitter__circle {
@@ -39,7 +39,7 @@
 }
 
 .twitter:hover .twitter__symbol{
-  fill:#F1F2F2;
+  fill: $white;
 }
 
 .vk:hover .vk__circle {
@@ -47,16 +47,16 @@
 }
 
 .vk:hover .vk__symbol{
-  fill: #FFFFFF;
+  fill: $white;
 }
 
 //Telegram
 .tg__symbol {
-  fill: $icon-symbol;
+  fill: $light-grey;
 }
 
 .tg__circle {
-  stop-color: $icon-circle;
+  stop-color: $middle-grey;
 }
 
 .tg:hover .tg__circle--grad-blue-1 {
@@ -68,16 +68,16 @@
 }
 
 .tg:hover .tg__symbol--white {
-  fill: #fff;
+  fill: $white;
 }
 
 //GitHub
 .git {
-  fill: $icon-symbol;
+  fill: $light-grey;
 }
 
 .git:hover  {
-  fill: #fff;
+  fill: $white;
 }
 
 @media (min-width: 768px) {

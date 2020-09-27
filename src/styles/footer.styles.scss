@@ -1,6 +1,6 @@
 .footer {
   flex-shrink: 0; //4.Footer to bottom
-  background-color: $grey;
+  background-color: $dark-grey;
   padding-bottom: 15px;
 }
 
@@ -17,7 +17,7 @@
   font-size: 14px;
   margin-top: 15px;
   text-align: center;
-  color: $icon-symbol;
+  color: $light-grey;
 }
 
 @media (min-width: 768px) {
