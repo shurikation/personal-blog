@@ -1,26 +1,28 @@
-.intro-template {
+.template__intro {
   height: 60vh;
   &:before {
     height: inherit;
   }
 }
 
-.template__wrapper {
-  padding-top: 45px;
-}
-
 .template-title {
   padding-top: 15vh;
 }
 
+.template__subtitle {
+  text-align: left;
+}
+
+.template__text {
+  padding-top: 10px;
+}
+
 @media (min-width: 576px) {
-  .template__wrapper {
-    padding-top: 60px;
-  }
+
 }
 
 @media (min-width: 992px) {
-  .intro-template {
+  .template__intro {
     height: 50vh;
   }
 
@@ -28,7 +30,4 @@
     padding-top: 18vh;
   }
 
-  .template__wrapper {
-    padding-top: 80px;
-  }
 }
