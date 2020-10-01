@@ -56,6 +56,11 @@ module.exports = {
       template: './src/blog/blog-template.html',
       minify: true
     }),
+    new HTMLWebpackPlugin({
+      filename: './pages/projects-template.html',
+      template: './src/pages/projects-template.html',
+      minify: true
+    }),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: '[name].css'
