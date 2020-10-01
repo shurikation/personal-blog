@@ -152,6 +152,12 @@
     transform: scale(1);
   }
 
+  .menu__item--active::before  {
+    cursor: pointer;
+    transition: var(--hover-transition);
+    transform: scale(1);
+  }
+
   .menu__link {
     font-size:  19px;
     text-transform: uppercase;
