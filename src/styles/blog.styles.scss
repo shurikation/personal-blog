@@ -1,7 +1,7 @@
 @import "../vars";
 
 .blog__content {
-  padding: 20px 0;
+  padding: 40px 0;
 }
 
 .blog__single-post {
@@ -45,8 +45,7 @@
   padding: .5rem 3rem .7rem;
   transition: all var(--hover-transition);
   &:hover,
-  &:focus,
-  &:active {
+  &:focus {
     cursor: pointer;
     background-color: $green;
     color: $white;
@@ -66,8 +65,16 @@
 }
 
 @media (min-width: 786px) {
+  .blog__content {
+    padding: 60px 0;
+  }
+
   .single-post__button {
     font-size: 18px;
+  }
+
+  .blog__button-wrapper {
+    padding-top: 30px;
   }
 }
 

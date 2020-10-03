@@ -30,6 +30,14 @@
   padding-top: 20px;
 }
 
+.main-title__link {
+  transition: all var(--hover-transition);
+  &:hover {
+    color: $green;
+    transition: all var(--hover-transition);
+  }
+}
+
 .sub-title {
   font-size: 18px;
 }
@@ -48,8 +56,7 @@
   border: 2px solid $green;
   transition: all var(--hover-transition);
   &:hover,
-  &:focus,
-  &:active {
+  &:focus {
     cursor: pointer;
     background-color: transparent;
     color: $green;
