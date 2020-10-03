@@ -1,7 +1,7 @@
 @import "vars";
 
 :root {
-  --hover-transition: 0.5s;
+  --hover-transition: 0.6s;
 }
 
 .container {
@@ -48,7 +48,8 @@
   border: 2px solid $green;
   transition: all var(--hover-transition);
   &:hover,
-  &:focus {
+  &:focus,
+  &:active {
     cursor: pointer;
     background-color: transparent;
     color: $green;
