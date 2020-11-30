@@ -8,16 +8,15 @@ export class Header {
     this.$logo = document.querySelector(props.logo);
     this.$menu = document.querySelector(props.menu);
     this.$button = document.querySelector(props.button);
-    this.$animationTriggerElem = document.querySelector(props.animationTriggerElem);
+
     this.active = props.active;
     this.open = props.open;
     this.fixed = props.fixed;
-    this.unfixed = props.unfixed;
     this.white = props.white;
     this.black = props.black;
 
-    this.elemIsScrolled = false;
-    this.headerIsFixed = false;
+    this.distanceScrolled = false;
+    this.headerFixed = false;
     this.screenWidth = 768;//px
 
     this.menuHandler();
@@ -32,19 +31,18 @@ export class Header {
   }
 
   fixingHandler() {
-    ScrollHandler.isElemScrolledDown(this.$animationTriggerElem)
-        ? this.elemIsScrolled = true
-        : this.elemIsScrolled = false;
+    ScrollHandler.isDistanceScrolled(400)//px
+        ? this.distanceScrolled = true
+        : this.distanceScrolled = false;
 
-    if (this.elemIsScrolled && !this.headerIsFixed) this.fixHeader();
-    if (!this.elemIsScrolled && this.headerIsFixed) this.unfixHeader();
+    if (this.distanceScrolled && !this.headerFixed) this.fixHeader();
+    if (!this.distanceScrolled && this.headerFixed) this.unfixHeader();
   }
 
   fixHeader() {
-    this.headerIsFixed = true;
+    this.headerFixed = true;
 
     this.$header.classList.add(this.fixed);
-    this.$header.classList.remove(this.unfixed);
 
     this.$button.style.backgroundColor = this.black;
     this.$logo.style.color = this.black;
@@ -58,13 +56,12 @@ export class Header {
   }
 
   unfixHeader() {
-    this.headerIsFixed = false;
+    this.headerFixed = false;
 
     this.$header.classList.remove(this.fixed);
 
     if (!this.isNavbarOpen()) {
       this.headerColorToggler("transparent");
-      this.$header.classList.add(this.unfixed);
       this.$button.style.backgroundColor = null;
       this.$logo.style.color = null;
     }
@@ -80,10 +77,6 @@ export class Header {
   headerColorToggler(color) {
     this.$header.style.backgroundColor = color;
     this.$nav.style.backgroundColor = color;
-
-    if (this.isHeaderUnfix()) {
-      this.$header.classList.remove(this.unfixed);
-    }
   }
 
   innerElemsClickHandler() {
@@ -98,11 +91,11 @@ export class Header {
   }
 
   linksColorToggler() {
-    if (this.headerIsFixed && document.documentElement.clientWidth > this.screenWidth) {
+    if (this.headerFixed && document.documentElement.clientWidth > this.screenWidth) {
       this.$links.forEach(link => link.style.color = this.black);
     }
 
-    if (!this.headerIsFixed) {
+    if (!this.headerFixed) {
       this.$links.forEach(link => link.style.color = null);
     }
   }
@@ -111,7 +104,4 @@ export class Header {
     return this.$button.classList.contains(this.active);
   }
 
-  isHeaderUnfix() {
-    return this.$header.classList.contains(this.unfixed);
-  }
 }

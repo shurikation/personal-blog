@@ -2,7 +2,6 @@ import {header} from "../../index"
 
 export class ScrollHandler {
   constructor() {
-    this.distanceFromBorder = 200;//px
     this.isScrolling = false;
     this.init();
   }
@@ -21,9 +20,7 @@ export class ScrollHandler {
     this.isScrolling = true;
   }
 
-  static isElemScrolledDown($elem) {
-    const elementBoundary = $elem.getBoundingClientRect();
-    const bottom = elementBoundary.bottom;
-    return (bottom <= 200); //px
+  static isDistanceScrolled(scrolledDistance) {
+    return window.pageYOffset >= scrolledDistance;//px
   }
 }
