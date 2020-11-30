@@ -1,8 +1,12 @@
 .template__intro {
-  height: 60vh;
+  height: 35vh;
   &:before {
     height: inherit;
   }
+}
+
+.template__content {
+  padding: 20px 0;
 }
 
 .template-title {
@@ -17,17 +21,20 @@
   padding-top: 10px;
 }
 
-@media (min-width: 576px) {
-
+@media (min-width: 768px) {
+  .template__content {
+    padding: 0;
+  }
 }
 
 @media (min-width: 992px) {
   .template__intro {
-    height: 50vh;
+    height: 45vh;
   }
 
+
   .template-title {
-    padding-top: 18vh;
+    padding-top: 16vh;
   }
 
 }
